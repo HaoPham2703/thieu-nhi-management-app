@@ -157,10 +157,9 @@ npx nodemon src/server.js
 
 ### ERD
 
-![ERD_my_church](docs/ERD_my_church.png)
+![ERD_my_church](./ERD_my_church.png)
 
-- SVG: [docs/ERD_my_church.svg](docs/ERD_my_church.svg)
-- PDF: [docs/ERD_my_church.pdf](docs/ERD_my_church.pdf)
+- SVG: [docs/ERD_my_church.svg](./ERD_my_church.svg)
 
 ## 🧑‍💻 Công nghệ sử dụng
 
