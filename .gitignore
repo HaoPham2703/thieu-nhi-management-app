@@ -41,3 +41,40 @@ app-example
 # generated native folders
 /ios
 /android
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Build files
+build/
+*.apk
+*.aab
+*.ipa
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Testing
+coverage/
+*.lcov
+
+# Temporary files
+*.tmp
+*.temp

@@ -1,50 +1,191 @@
-# Welcome to your Expo app 👋
+# 📘 Thiếu Nhi Management App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Ứng dụng quản lý thiếu nhi trong giáo xứ / nhà thờ
 
-## Get started
+Giúp Giáo lý viên (GLV), Ban Giáo Lý, và Cha xứ dễ dàng quản lý các lớp học, học sinh, điểm danh và thống kê.
 
-1. Install dependencies
+## 🌟 Tính năng chính
 
-   ```bash
-   npm install
-   ```
+### 👩‍🏫 Dành cho Giáo Lý Viên (GLV)
 
-2. Start the app
+- Xem danh sách lớp phụ trách
+- Cập nhật thông tin học sinh
+- Điểm danh mỗi buổi học
+- Ghi chú chuyên cần, hạnh kiểm
 
-   ```bash
-   npx expo start
-   ```
+### 👨‍👧 Dành cho Ban Giáo Lý / Admin
 
-In the output, you'll find options to open the app in a
+- Quản lý toàn bộ danh sách lớp, học sinh, GLV
+- Phân công giáo lý viên cho từng lớp
+- Thống kê chuyên cần, tỷ lệ nghỉ học
+- Quản lý thông tin năm học, giai đoạn, khóa học
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+### ⛪ Dành cho Cha xứ / Giám sát
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+- Xem báo cáo tổng quan
+- Theo dõi tiến trình học tập và chuyên cần của thiếu nhi
 
-## Get a fresh project
+## 🧩 Kiến trúc hệ thống
 
-When you're ready, run:
+Ứng dụng được xây dựng theo mô hình 3 lớp (Three-layer architecture):
 
-```bash
-npm run reset-project
+**Presentation → Business Logic → Data Access**
+
+- **Frontend**: React Native (Expo)
+- **Backend**: Node.js + Express
+- **Database**: PostgreSQL
+- **ORM**: Prisma
+- **API**: RESTful JSON
+
+## 🗂️ Cấu trúc thư mục
+
+### 📱 Frontend (React Native - Expo)
+
+```
+my-first-app/
+├── app/                        # File-based routing
+│   ├── (tabs)/                 # Tab navigation
+│   │   ├── index.tsx          # Trang chủ (Quản lý thiếu nhi)
+│   │   ├── explore.tsx        # Khám phá
+│   │   └── _layout.tsx        # Tab layout
+│   ├── modal.tsx              # Modal screens
+│   └── _layout.tsx            # Root layout
+├── constants/
+│   ├── churches.ts            # Data nhà thờ
+│   └── theme.ts               # Theme colors & fonts
+├── utils/
+│   └── churches.ts            # Helper functions
+├── components/                # Reusable components
+│   ├── themed-text.tsx
+│   ├── themed-view.tsx
+│   ├── haptic-tab.tsx
+│   └── ui/
+│       ├── collapsible.tsx
+│       └── icon-symbol.tsx
+├── hooks/                      # Custom hooks
+│   ├── use-color-scheme.ts
+│   └── use-theme-color.ts
+├── assets/                     # Static assets
+│   └── images/
+├── app.json                    # Expo configuration
+├── package.json
+├── tsconfig.json
+└── README.md
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### 🔧 Backend (Node.js + Express)
 
-## Learn more
+```
+thieu-nhi-management-app-backend/
+├── src/
+│   ├── controllers/           # Xử lý request/response
+│   │   ├── studentController.js
+│   │   ├── classController.js
+│   │   └── attendanceController.js
+│   ├── services/              # Business logic
+│   │   ├── studentService.js
+│   │   └── attendanceService.js
+│   ├── repositories/          # Data access layer
+│   │   ├── studentRepository.js
+│   │   └── classRepository.js
+│   ├── routes/                # API endpoints
+│   │   ├── studentRoutes.js
+│   │   ├── classRoutes.js
+│   │   └── index.js
+│   ├── middleware/            # Auth, validation
+│   │   ├── auth.js
+│   │   └── validator.js
+│   ├── db/                    # Database config
+│   ├── app.js
+│   └── server.js
+├── prisma/
+│   └── schema.prisma          # Database schema
+├── .env
+├── .env.example
+├── package.json
+└── README.md
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+## ⚙️ Cài đặt & Chạy dự án
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+### 🪄 1. Clone dự án
 
-## Join the community
+```bash
+git clone https://github.com/HaoPham2703/thieu-nhi-management-app.git
+cd thieu-nhi-management-app
+```
 
-Join our community of developers creating universal apps.
+### 🧱 2. Cài đặt dependencies
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+```bash
+npm install
+```
+
+### 🛠️ 3. Cấu hình môi trường
+
+Tạo file `.env` (copy từ `.env.example`):
+
+```
+DATABASE_URL="postgresql://username:password@localhost:5432/thieunhi"
+PORT=4000
+```
+
+### 🚀 4. Chạy dự án
+
+```bash
+npm run dev
+```
+
+hoặc
+
+```bash
+npx nodemon src/server.js
+```
+
+## 💾 Database
+
+### Mô hình dữ liệu chính:
+
+| Bảng         | Mô tả                  |
+| ------------ | ---------------------- |
+| `students`   | Danh sách thiếu nhi    |
+| `classes`    | Thông tin lớp học      |
+| `teachers`   | Giáo lý viên phụ trách |
+| `attendance` | Điểm danh, chuyên cần  |
+| `users`      | Tài khoản đăng nhập    |
+| `roles`      | Phân quyền hệ thống    |
+
+## 🧑‍💻 Công nghệ sử dụng
+
+| Thành phần | Công nghệ             |
+| ---------- | --------------------- |
+| Frontend   | React Native (Expo)   |
+| Backend    | Node.js + Express     |
+| Database   | PostgreSQL            |
+| ORM        | Prisma                |
+| Auth       | JWT                   |
+| API        | RESTful JSON          |
+| Dev Tools  | Git, VS Code, Postman |
+
+## 🔐 Mục tiêu phát triển
+
+- [x] Đăng nhập phân quyền GLV / Admin
+- [x] Quản lý lớp học và học sinh
+- [x] Điểm danh theo buổi học
+- [ ] Xuất thống kê và báo cáo tổng hợp
+- [ ] Tích hợp Firebase Push Notification
+
+## 👥 Thành viên phát triển
+
+- **Phạm Hào** — Developer / Designer
+- Nhóm GLV hỗ trợ dữ liệu
+
+## 🧭 Hướng phát triển tương lai
+
+- Phiên bản Web quản trị dành cho Ban Giáo Lý
+- Tích hợp hệ thống chấm điểm, thi giáo lý
+- Lưu trữ học bạ điện tử của thiếu nhi
+
+## 📄 License
+
+MIT License © 2025 — HaoPham2703

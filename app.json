@@ -38,6 +38,12 @@
             "backgroundColor": "#000000"
           }
         }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Cho phép $(PRODUCT_NAME) sử dụng vị trí của bạn để tìm nhà thờ gần nhất."
+        }
       ]
     ],
     "experiments": {
