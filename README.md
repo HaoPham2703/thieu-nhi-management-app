@@ -37,6 +37,28 @@ Giúp Giáo lý viên (GLV), Ban Giáo Lý, và Cha xứ dễ dàng quản lý c
 - **ORM**: Prisma
 - **API**: RESTful JSON
 
+## 📈 Trạng thái dự án
+
+### Hoàn thành
+
+- [x] Khung ứng dụng Frontend (Expo Router, UI cơ bản)
+- [x] Danh sách nhà thờ, phân nhóm theo khu vực, hiệu ứng animation
+- [x] Mở Google Maps (xem bản đồ, chỉ đường) trên iOS/Android/Web
+- [x] Cấu trúc dữ liệu tách riêng (`constants/churches.ts`, `utils/churches.ts`)
+- [x] README, .gitignore, cấu trúc FE/BE
+
+### Đang thực hiện
+
+- [ ] Thiết kế API Backend (Express + Prisma)
+- [ ] Xác thực người dùng (JWT)
+- [ ] Đồng bộ dữ liệu thật từ Backend vào app
+
+### Kế hoạch sắp tới
+
+- [ ] Bộ lọc, tìm kiếm nhà thờ theo khu vực/tên
+- [ ] Đồng bộ/offline-first cơ bản
+- [ ] CI lint/format và release scripts
+
 ## 🗂️ Cấu trúc thư mục
 
 ### 📱 Frontend (React Native - Expo)
