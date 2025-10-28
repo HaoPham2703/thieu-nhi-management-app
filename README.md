@@ -159,7 +159,7 @@ npx nodemon src/server.js
 
 ![ERD_my_church](./ERD_my_church.png)
 
-- SVG: [docs/ERD_my_church.svg](./ERD_my_church.svg)
+[Xem ERD trên dbdiagram.io](https://dbdiagram.io/d/ERD_my_church-674aeddbe9daa85aca34d1fd)
 
 ## 🧑‍💻 Công nghệ sử dụng
 
