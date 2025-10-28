@@ -155,6 +155,13 @@ npx nodemon src/server.js
 | `users`      | Tài khoản đăng nhập    |
 | `roles`      | Phân quyền hệ thống    |
 
+### ERD
+
+![ERD_my_church](docs/ERD_my_church.png)
+
+- SVG: [docs/ERD_my_church.svg](docs/ERD_my_church.svg)
+- PDF: [docs/ERD_my_church.pdf](docs/ERD_my_church.pdf)
+
 ## 🧑‍💻 Công nghệ sử dụng
 
 | Thành phần | Công nghệ             |
